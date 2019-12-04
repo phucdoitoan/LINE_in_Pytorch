@@ -120,6 +120,6 @@ def evaluate(remained_G_file, removed_G_file, embed_file, AUC_file):
 
 
 t1 = timeit.default_timer()
-evaluate('data/facebook_remained.pkl', 'data/facebook_removed.pkl', 'data/embedding_facebook_remained_1.pkl',
-         'data/AUC_facebook_LINE-tensorflow_first-order.png')
+evaluate('data/facebook_remained.pkl', 'data/facebook_removed.pkl', 'data/embedding_facebook_remained_2.pkl',
+         'data/AUC_facebook_LINE-tensorflow_second-order.png')
 print('evaluate in %.2f s' %(timeit.default_timer() - t1))
