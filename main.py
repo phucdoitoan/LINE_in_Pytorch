@@ -15,7 +15,7 @@ def main():
     parser.add_argument('--embedding_dim', default=128, type=int)
     parser.add_argument('--batch_size', default=128, type=int)
     parser.add_argument('--K', default=5, type=int)
-    parser.add_argument('--proximity', default=2, help='1 or 2', type=int)
+    parser.add_argument('--proximity', default=1, help='1 or 2', type=int)
     parser.add_argument('--learning_rate', default=0.025, type=float)
     parser.add_argument('--num_batches', default=300000, type=int)
     parser.add_argument('--graph_file', default='data/facebook_remained.pkl')
