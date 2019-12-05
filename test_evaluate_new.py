@@ -15,7 +15,7 @@ def numerical_integral(l_x, l_y):
 
     return integral
 
-def main(order=1, AUC_file='AUC_fb_order=1.png', embed_file= 'data/embedding_facebook_remained_1.pkl', G_full_file='data/facebook_combined.pkl', G_remained_file='data/facebook_remained.pkl', G_removed_file='data/facebook_removed.pkl'):
+def main(order=1, AUC_file='data/auc/AUC_pytorch_fb_order=1.png', embed_file= 'data/embedding=pytorch_fb_remained_order-1.pkl', G_full_file='data/facebook_combined.pkl', G_remained_file='data/facebook_remained.pkl', G_removed_file='data/facebook_removed.pkl'):
     G_full = nx.read_gpickle(G_full_file)
     #G_remained = nx.read_gpickle(G_remained_file)
     G_removed = nx.read_gpickle(G_removed_file)
@@ -46,6 +46,10 @@ def main(order=1, AUC_file='AUC_fb_order=1.png', embed_file= 'data/embedding_fac
     t2 = timeit.default_timer()
     print('Evaluate in %.2f s' %(t2-t1))
 
+    print('Order: ', order)
+    print('   auc_score: ', auc_score)
+    print('   auc: ', auc)
+
     #auc_manual = numerical_integral(fpr, tpr)
 
     fig = plt.figure()
@@ -59,3 +63,5 @@ def main(order=1, AUC_file='AUC_fb_order=1.png', embed_file= 'data/embedding_fac
 
 
     return auc_score, f1_score, auc
+
+main()

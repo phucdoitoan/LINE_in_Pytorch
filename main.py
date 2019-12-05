@@ -84,7 +84,7 @@ def train(args):
         if b % 1000 == 0 or b == (args.num_batches - 1):
             embedding = model.nodes_embed.data
             embedding = F.normalize(embedding, p=2, dim=1)
-            pickle.dump(embedding, open('data/embedding=pytorch_fb_remained_order-%s.pkl' % suffix, 'wb'))
+            pickle.dump(embedding.to('cpu'), open('data/embedding=pytorch_fb_remained_order-%s.pkl' % suffix, 'wb'))
 
 if __name__ == '__main__':
     main()
