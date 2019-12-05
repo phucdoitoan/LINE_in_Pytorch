@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--K', default=5, type=int)
     parser.add_argument('--proximity', default=2, help='1 or 2', type=int)
     parser.add_argument('--learning_rate', default=0.025, type=float)
-    parser.add_argument('--num_batches', default=35000, type=int)
+    parser.add_argument('--num_batches', default=300000, type=int)
     parser.add_argument('--graph_file', default='data/facebook_remained.pkl')
     args = parser.parse_args()
 
@@ -37,8 +37,12 @@ def train(args):
     model = Line(n1 = args.num_of_nodes, dim=args.embedding_dim, order=suffix)
     model.to(device)
 
-    optimizer = optim.SGD(model.parameters(), lr=learning_rate)
-    #optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
+    #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
+
+    def get_lr():
+        for param_group in optimizer.param_groups:
+            return param_group['lr']
 
     sampling_time, training_time = 0, 0
 
@@ -48,30 +52,38 @@ def train(args):
         t1 = time.time()
         source_node, target_node, label = data_loader.fetch_batch(batch_size=args.batch_size, K=args.K)
         t2 = time.time()
-        sampling_time = t2 - t1
+        sampling_time += t2 - t1
 
         optimizer.zero_grad()
         loss = model(source_node, target_node, label)
         loss.backward()
         optimizer.step()
 
-        training_time = time.time() - t2
+        training_time += time.time() - t2
 
+        """WARNING: update leaning_rate -> does not update optimizer's lr"""
         if b % 100 != 0:
+            for param_group in optimizer.param_groups:
+                learning_rate = param_group['lr']
+
             if learning_rate > args.learning_rate * 0.0001:
                 learning_rate = args.learning_rate * (1 - b/args.num_batches)
             else:
                 learning_rate = args.learning_rate * 0.0001
+
+            for param_group in optimizer.param_groups:
+                param_group['lr'] = learning_rate
+
         else:
             print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss, sampling_time, training_time,
                                                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+            #print('optimizer lr: ', get_lr())
+            sampling_time, training_time = 0, 0
 
-        if b % 1000 == 0:
-            model.nodes_embed.data = F.normalize(model.nodes_embed.data, p=2, dim=1)
-
-        if b == (args.num_batches - 1):
-            model.nodes_embed.data = F.normalize(model.nodes_embed.data, p=2, dim=1)
-            pickle.dump(model.nodes_embed.data, open('data/embedding_fb_remained_order-%s.pkl' % suffix, 'wb'))
+        if b % 1000 == 0 or b == (args.num_batches - 1):
+            embedding = model.nodes_embed.data
+            embedding = F.normalize(embedding, p=2, dim=1)
+            pickle.dump(embedding, open('data/embedding=pytorch_fb_remained_order-%s.pkl' % suffix, 'wb'))
 
 if __name__ == '__main__':
     main()

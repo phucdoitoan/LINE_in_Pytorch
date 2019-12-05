@@ -18,7 +18,6 @@ class Line(nn.Module):
         if self.order == 2:
             self.context_nodes_embed = nn.Parameter(torch.zeros(n1, dim).uniform_(-1, 1))
 
-
     def forward(self, source_node, target_node, label):
         """
 

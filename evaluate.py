@@ -6,6 +6,7 @@ import torch
 import matplotlib.pyplot as plt
 import timeit
 from time import sleep
+import torch.nn.functional as F
 
 
 def numerical_integral(l_x, l_y):
@@ -93,6 +94,7 @@ def evaluate(remained_G_file, removed_G_file, embed_file, AUC_file):
     # point wise distance matrix
     """WARNING: calculate dist_matrix take alot of memory space: about n*n*dim*24 bytes"""
     dist_matrix = torch.sum(torch.abs(nodes_embed.unsqueeze(1) - nodes_embed.unsqueeze(0)) ** 2, dim=2)
+    #dist_matrix = - F.logsigmoid(torch.sum(torch.abs(nodes_embed.unsqueeze(1) - nodes_embed.unsqueeze(0)) ** 2, dim=2))
 
     # only keep distance between unlinked nodes
     dist_c = torch.mul(dist_matrix, adj_c)
@@ -120,6 +122,6 @@ def evaluate(remained_G_file, removed_G_file, embed_file, AUC_file):
 
 
 t1 = timeit.default_timer()
-evaluate('data/facebook_remained.pkl', 'data/facebook_removed.pkl', 'data/embedding_facebook_remained_2.pkl',
-         'data/AUC_facebook_LINE-tensorflow_second-order.png')
+evaluate('data/syn_500/same_graph_removed.pkl', 'data/syn_500/same_graph_remained.pkl', 'data/syn_500/embedding-tensor_same_graph_remained_second-order.pkl',
+         'data/syn_500/AUC_same_graph_removed_second-order.png')
 print('evaluate in %.2f s' %(timeit.default_timer() - t1))
