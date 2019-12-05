@@ -51,6 +51,7 @@ def train(args):
     for b in range(args.num_batches):
         t1 = time.time()
         source_node, target_node, label = data_loader.fetch_batch(batch_size=args.batch_size, K=args.K)
+        label = torch.FloatTensor(label).to(device)
         t2 = time.time()
         sampling_time += t2 - t1
 

@@ -27,7 +27,7 @@ class Line(nn.Module):
         :return:
         """
 
-        label = torch.FloatTensor(label)
+        #label = torch.FloatTensor(label)
 
         source_embed = self.nodes_embed[source_node]
 
