@@ -1,5 +1,5 @@
 
-
+"""
 import networkx as nx
 import numpy as np
 
@@ -101,12 +101,12 @@ class AliasSampling:
             return res[0]
         else:
             return res
-
-
-
-
-
 """
+
+
+
+
+
 import networkx as nx
 import numpy as np
 
@@ -206,7 +206,7 @@ class AliasSampling:
             return res[0]
         else:
             return res
-"""
+
 
 
 

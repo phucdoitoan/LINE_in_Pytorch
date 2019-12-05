@@ -1,0 +1,6 @@
+
+
+NOTE:
+
+copy the whole thing in utils from LINE-tensorflow -> model run correctly with loss reduce to near 0 (0.00..) (for 2nd order)
+old utils (the one inside "") => even though after 66000 batches, model's loss still stuck around 0.2 0.3 (dont know why)
