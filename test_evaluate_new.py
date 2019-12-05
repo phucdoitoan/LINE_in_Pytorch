@@ -68,7 +68,7 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
 
 order=1
-AUC_file= 'data/auc/AUC_tensorflow-2-1_fb_order=1.png'
+AUC_file= 'data/auc/AUC_tensorflow-2-2_fb_order=1.png'
 embed_file= 'data/embedding=tensorflow-2_fb_remained_order-1.pkl'
 G_full_file='data/facebook_combined.pkl'
 G_remained_file='data/facebook_remained.pkl'

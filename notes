@@ -9,4 +9,7 @@ old utils (the one inside "") => even though after 66000 batches, model's loss s
 while embed with tensorlow -> AUC of 0.77 and 0.87
 WHY???
 
+only with 10,000 batches LINE-tensorflow
+has already given very good embedding with AUC around 0.75 and 0.89 (even > than convergence AUC for 2nd-order)
+(after 36000 batches order-1 also achieve 0.77 AUC as convergence)
 
