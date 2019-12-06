@@ -18,4 +18,5 @@ Negative edges: choose the same amount of edges as in positive label: 44117 unli
 (just change order, AUC_file, embed_file in test_evaluate_new.py to evaluate embeddings)
 
 Embedding by tensorflow version after only 20,000 batches already give AUC close to AUC after run 300,000 batches: 1st-order: 0.76; 2nd-order: 0.87
+
 Embedding by this pytorch version after 300,000 batches give AUC about random: 0.53, 0.55 (tried embedding with smaller number of batches give the same bad AUC scores)
