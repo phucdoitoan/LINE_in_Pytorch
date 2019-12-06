@@ -34,9 +34,9 @@ def train():
     #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
 
-    #def get_lr():
-    #    for param_group in optimizer.param_groups:
-    #        return param_group['lr']
+    def get_lr():
+        for param_group in optimizer.param_groups:
+            return param_group['lr']
 
     sampling_time, training_time = 0, 0
 
@@ -56,14 +56,8 @@ def train():
 
         training_time += time.time() - t2
 
-        """WARNING: is this the right way to update lr of optimizer?"""
         if b % 100 != 0:
-            #print('source_node target_node')
-            #print('size ', len(source_node), len(target_node), len(label))
-            #print(source_node[:12])
-            #print(target_node[:12])
-            #print(label[:12])
-
+            """This is for updating learning rate of optimizer: same with tensorflow one: checked"""
             for param_group in optimizer.param_groups:
                 lr = param_group['lr']
 
@@ -78,10 +72,10 @@ def train():
         else:
             print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss, sampling_time, training_time,
                                                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-            #print('optimizer lr: ', get_lr())
+            print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
-        if b % 1000 == 0 or b == (num_batches - 1):
+        if b % 10000 == 0 or b == (num_batches - 1):
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             embedding = F.normalize(embedding, p=2, dim=1)
             pickle.dump(embedding.to('cpu'), open('data/embedding=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
