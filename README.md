@@ -16,3 +16,5 @@ Calculate AUC score: positive labels: around 44000 edges in facebook_removed.
 Negative edges: choose the same amount of around 44000 unlinked pairs of nodes in the original graph (facebook_combined).
 
 (just change order, AUC_file, embed_file in test_evaluate_new.py to evaluate embeddings)
+
+Embedding by tensorflow version after only 20,000 batches already give AUC close to AUC after run 300,000 batches: 1st-order: 0.76; 2nd-order: 0.87
