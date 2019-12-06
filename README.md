@@ -15,4 +15,4 @@ test_evaluate_new.py: testing the model's embeddings with link prediction task.
 Calculate AUC score: positive labels: around 44000 edges in facebook_removed.
 Negative edges: choose the same amount of around 44000 unlinked pairs of nodes in the original graph (facebook_combined).
 
-(just change order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file in test_evaluate_new.py to evaluate embeddings)
+(just change order, AUC_file, embed_file in test_evaluate_new.py to evaluate embeddings)
