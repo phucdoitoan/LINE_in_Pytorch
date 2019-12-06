@@ -1,7 +1,9 @@
 # try-implement-LINE
 
 utils.py: contain CustomDataLoader -> load batch_size edges (i,j) choosed randomly from the graph
+
 model.py: contain Line model
+
 main.py: to train model
 
 data directory: facebook dataset (mentioned in node2vec paper) contained in facebook_combined.pkl (4039 nodes, around 88000 edges)
