@@ -13,7 +13,7 @@ class CustomDataLoader:
         try:
             self.edge_distribution = np.array([attr['weight'] for _, _, attr in self.edges_raw], dtype=np.float32)
         except:
-            self.edge_distribution = np.ones(len(self.edges_raw))
+            self.edge_distribution = np.ones(len(self.edges_raw), dtype=np.float32)
         #self.edge_distribution = np.array([attr['weight'] for _, _, attr in self.edges_raw], dtype=np.float32)
         self.edge_distribution /= np.sum(self.edge_distribution)
         self.edge_sampling = AliasSampling(prob=self.edge_distribution)

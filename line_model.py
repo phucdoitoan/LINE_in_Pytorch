@@ -32,19 +32,25 @@ class Line(nn.Module):
         """
 
         #label = torch.FloatTensor(label)
+        #print('size source_node, target_node, label ', len(source_node), len(target_node), len(label))
 
         source_embed = self.nodes_embed[source_node]
+        #print('source_embed shape: ', source_embed.shape)
 
         if self.order == 1:
             target_embed = self.nodes_embed[target_node]
+            #print('target_embed shape: ', target_embed.shape)
 
         elif self.order == 2:  # self.order == 2
             target_embed = self.context_nodes_embed[target_node]
+            #print('target_embed shape: ', target_embed.shape)
         else:
             print("ERROR: order has to be 1 or 2")
 
         inner_product = torch.sum(torch.mul(source_embed, target_embed), dim=1)
+        #print('inner_product shape: ', inner_product.shape)
         pos_neg = torch.mul(label, inner_product)
         line_loss = F.logsigmoid(pos_neg)
 
-        return - torch.mean(line_loss)
+        mean_loss = - torch.mean(line_loss)
+        return mean_loss

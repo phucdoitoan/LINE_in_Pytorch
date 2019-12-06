@@ -30,13 +30,18 @@ def train():
 
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
+    print('model embed ')
+    print(model.nodes_embed.shape)
+    print('model parameter shape')
+    print(model.nodes_embed[0])
+
 
     #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
 
-    def get_lr():
-        for param_group in optimizer.param_groups:
-            return param_group['lr']
+    #def get_lr():
+    #    for param_group in optimizer.param_groups:
+    #        return param_group['lr']
 
     sampling_time, training_time = 0, 0
 
@@ -72,7 +77,7 @@ def train():
         else:
             print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss, sampling_time, training_time,
                                                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-            print('optimizer lr: ', get_lr())
+            #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
         if b % 10000 == 0 or b == (num_batches - 1):
