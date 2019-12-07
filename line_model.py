@@ -8,7 +8,7 @@ import numpy as np
 
 class Line(nn.Module):
 
-    np.random.seed(42)
+    #np.random.seed(42)
 
     def __init__(self, n1, dim, order):
         super(Line, self).__init__()
@@ -16,11 +16,11 @@ class Line(nn.Module):
         self.dim = dim
         self.order = order
 
-        nodes_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+        nodes_init = np.random.uniform(-100, 100, (n1, dim)).astype(np.float32)
         self.nodes_embed = nn.Parameter(torch.from_numpy(nodes_init), requires_grad=True)
 
         if self.order == 2:
-            context_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+            context_init = np.random.uniform(-100, 100, (n1, dim)).astype(np.float32)
             self.context_nodes_embed = nn.Parameter(torch.from_numpy(context_init), requires_grad=True)
 
 
@@ -54,11 +54,8 @@ class Line(nn.Module):
         pos_neg = torch.mul(label, inner_product)
         line_loss = F.logsigmoid(pos_neg)
 
-        mean_loss = - torch.mean(line_loss)
+        loss = - torch.mean(line_loss)
 
-        #print('inner_product shape: ', inner_product.shape)
-        #print('pos_neg shape ', pos_neg.shape)
-        #print('line loss shape ', line_loss.shape)
-        #print('mean loss shape ', mean_loss.shape, mean_loss)
+        #loss = - torch.sum(line_loss)
 
-        return mean_loss
+        return loss

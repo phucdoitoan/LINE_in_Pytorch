@@ -13,12 +13,15 @@ import torch.nn.functional as F
 
 def train():
 
+    np.random.seed(42)
+    torch.set_printoptions(precision=8)
+
     embedding_dim = 128
     batch_size = 128
     K = 5
     order = 2
-    learning_rate = 0.025
-    num_batches = 300000
+    learning_rate = 10  #0.025
+    num_batches = 5  # 300000
     graph_file = 'data/facebook_remained.pkl'
 
 
@@ -31,9 +34,9 @@ def train():
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
 
-    # optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     # optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    #optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 
     #def get_lr():
@@ -58,12 +61,6 @@ def train():
         print(target_node[:12])
         print(label[:12])
 
-        print('nodes_embed')
-        #print(model.nodes_embed.data.dtype)
-        print(model.nodes_embed.data[0][0:12])
-        print('context_nodes_embed')
-        #print(model.context_nodes_embed.data.dtype)
-        print(model.context_nodes_embed.data[0][0:12])
 
 
 
@@ -73,10 +70,10 @@ def train():
             loss = model(source_node, target_node, label)
             loss.backward()
 
-            print('nodes_embed grad')
-            print(model.nodes_embed.grad[0][0:12])
-            print('context_nodes_embed grad')
-            print(model.context_nodes_embed.grad[0][0:12])
+            print('nodes_embed grad of node ', source_node[0])
+            print(model.nodes_embed.grad[source_node[0]][0:6])
+            print('context_nodes_embed grad of nodes ', target_node[0])
+            print(model.context_nodes_embed.grad[target_node[0]][0:6])
 
             optimizer.step()
 
@@ -94,6 +91,13 @@ def train():
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 
+            print('nodes_embed of node: ', source_node[0])
+            # print(model.nodes_embed.data.dtype)
+            print(model.nodes_embed.data[source_node[0]][0:6])
+            print('context_nodes_embed of node: ', target_node[0])
+            # print(model.context_nodes_embed.data.dtype)
+            print(model.context_nodes_embed.data[target_node[0]][0:6])
+
             print('LOSS: ', loss)
 
         else:
@@ -104,7 +108,7 @@ def train():
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
-        if b % 10000 == 0 or b == (num_batches - 1):
+        if (b != 0) and (b % 10000 == 0 or b == (num_batches - 1)):
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             normalized_embedding = F.normalize(embedding, p=2, dim=1)
             pickle.dump(normalized_embedding.to('cpu'), open('data/embedding=Adam-pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
