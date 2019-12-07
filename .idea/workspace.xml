@@ -4,7 +4,6 @@
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/embedding_Adam=pytorch_fb_remained_order-2.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes" beforeDir="false" afterPath="$PROJECT_DIR$/notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_evaluate_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
