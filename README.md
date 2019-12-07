@@ -23,9 +23,11 @@ Negative edges: choose the same amount of around 44000 unlinked pairs of nodes i
 TWO MODEL DEFINITELY DIFFERENT:  -> check in check-node branch
 this pytorch model is really smelly:
 
-initalial embed form uniform(-1,1): lr = 10 and 0.025
- pytorch gives almost same values of loss (check first several batches)
- while tensorflow do give smaller loss for bigger lr
+initalial embed form uniform(-1,1): 
+
+    lr = 10 and 0.025
+    pytorch gives almost same values of loss (check first several batches)
+    while tensorflow do give smaller loss for bigger lr
 
 initial embed from uniform(-100, 100):
 
