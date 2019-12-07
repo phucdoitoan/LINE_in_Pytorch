@@ -30,10 +30,12 @@ initalial embed form uniform(-1,1): lr = 10 and 0.025
 initial embed from uniform(-100, 100):
   lr = 0.25
     first loss are different (although small) : torch 14577.215820 , tf 14577.213867;
+    
     after that loss are different torch 14245. vs tf 14231; torch 15617 vs 15608
 
   lr = 10
     first loss same as lr = 0.025: torch 14577.215820 , tf 14577.213867
+    
     1nd batch loss: torch 14245. vs tf 9548.
     2rd batch loss: torch 15610. vs tf 12086.
     3rd: torch 13519. tf 10643.
