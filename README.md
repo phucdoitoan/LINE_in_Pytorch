@@ -20,27 +20,14 @@ Negative edges: choose the same amount of around 44000 unlinked pairs of nodes i
 
 ***********NOTE:*************
 
-copy the whole thing in utils from LINE-tensorflow -> model run correctly with loss reduce to near 0 (0.00..) (for 2nd order)
-old utils (the one inside "") => even though after 66000 batches, model's loss still stuck around 0.2 0.3 (dont know why)
-
-=> AUC only around 0.56
-while embed with tensorlow -> AUC of 0.77 and 0.87
-WHY???
-
-only with 10,000 batches LINE-tensorflow
-has already given very good embedding with AUC around 0.75 and 0.89 (even > than convergence AUC for 2nd-order)
-(after 36000 batches order-1 also achieve 0.77 AUC as convergence)
-
-
-
 TWO MODEL DEFINITELY DIFFERENT:
-pytorch is really smelly:
+this pytorch model is really smelly:
 
-initalial (-1,1): lr = 10 and 0.025
+initalial embed form uniform(-1,1): lr = 10 and 0.025
  pytorch gives almost same values of loss (check first several batches)
  while tensorflow do give smaller loss for bigger lr
 
-initial (-100, 100):
+initial embed from uniform(-100, 100):
   lr = 0.25
     first loss are different (although small) : torch 14577.215820 , tf 14577.213867;
     after that loss are different torch 14245. vs tf 14231; torch 15617 vs 15608
