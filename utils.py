@@ -70,6 +70,8 @@ class AliasSampling:
 
     # Reference: https://en.wikipedia.org/wiki/Alias_method
 
+    np.random.seed(42)
+
     def __init__(self, prob):
         self.n = len(prob)
         self.U = np.array(prob) * self.n

@@ -24,17 +24,12 @@ def train():
 
     data_loader = CustomDataLoader(graph_file=graph_file)
     num_of_nodes = data_loader.num_of_nodes
-    print('number of nodes ', num_of_nodes)
+    #print('number of nodes ', num_of_nodes)
 
     device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
-    print('model embed ')
-    print(model.nodes_embed.shape)
-    print('model parameter shape')
-    print(model.nodes_embed[0])
-
 
     #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
@@ -53,6 +48,11 @@ def train():
         label = torch.FloatTensor(label).to(device)
         t2 = time.time()
         sampling_time += t2 - t1
+
+        print('souce_nodes, target_node, label')
+        print(source_node[:12])
+        print(target_node[:12])
+        print(label[:12])
 
         optimizer.zero_grad()
         loss = model(source_node, target_node, label)
@@ -82,8 +82,8 @@ def train():
 
         if b % 10000 == 0 or b == (num_batches - 1):
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
-            embedding = F.normalize(embedding, p=2, dim=1)
-            pickle.dump(embedding.to('cpu'), open('data/embedding=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
+            normalized_embedding = F.normalize(embedding, p=2, dim=1)
+            pickle.dump(normalized_embedding.to('cpu'), open('data/embedding=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
 
 
 train()

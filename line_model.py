@@ -14,13 +14,10 @@ class Line(nn.Module):
         self.order = order
 
         self.nodes_embed = nn.Parameter(torch.zeros(n1, dim).uniform_(-1, 1), requires_grad=True)
-        #self.nodes_embed = nn.Embedding(n1, dim)
-        #self.nodes_embed.weight.data = self.nodes_embed.weight.data.uniform_(-1, 1)
 
         if self.order == 2:
             self.context_nodes_embed = nn.Parameter(torch.zeros(n1, dim).uniform_(-1, 1), requires_grad=True)
-            #self.context_nodes_embed = nn.Embedding(n1, dim)
-            #self.context_nodes_embed.weight.data = self.context_nodes_embed.weight.data.uniform_(-1, 1)
+
 
     def forward(self, source_node, target_node, label):
         """
@@ -48,9 +45,14 @@ class Line(nn.Module):
             print("ERROR: order has to be 1 or 2")
 
         inner_product = torch.sum(torch.mul(source_embed, target_embed), dim=1)
-        #print('inner_product shape: ', inner_product.shape)
         pos_neg = torch.mul(label, inner_product)
         line_loss = F.logsigmoid(pos_neg)
 
         mean_loss = - torch.mean(line_loss)
+
+        #print('inner_product shape: ', inner_product.shape)
+        #print('pos_neg shape ', pos_neg.shape)
+        #print('line loss shape ', line_loss.shape)
+        #print('mean loss shape ', mean_loss.shape, mean_loss)
+
         return mean_loss
