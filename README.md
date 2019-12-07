@@ -21,6 +21,7 @@ Negative edges: choose the same amount of around 44000 unlinked pairs of nodes i
 ***********NOTE:***********
 
 TWO MODEL DEFINITELY DIFFERENT:  -> check in check-node branch
+
 this pytorch model is really smelly:
 
 initalial embed form uniform(-1,1): 
