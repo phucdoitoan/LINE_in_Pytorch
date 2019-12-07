@@ -31,8 +31,8 @@ def train():
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
 
-    #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
-    optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    # optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
 
     #def get_lr():
     #    for param_group in optimizer.param_groups:
@@ -43,25 +43,43 @@ def train():
     print('batches\tloss\tsampling time\ttraining_time\tdatetime')
 
     for b in range(num_batches):
+
         t1 = time.time()
         source_node, target_node, label = data_loader.fetch_batch(batch_size=batch_size, K=K)
         label = torch.FloatTensor(label).to(device)
         t2 = time.time()
         sampling_time += t2 - t1
 
+        print('******************** BATCH: %d ******************' %b)
         print('souce_nodes, target_node, label')
         print(source_node[:12])
         print(target_node[:12])
         print(label[:12])
 
-        optimizer.zero_grad()
-        loss = model(source_node, target_node, label)
-        loss.backward()
-        optimizer.step()
+        print('nodes_embed')
+        #print(model.nodes_embed.data.dtype)
+        print(model.nodes_embed.data[0][0:12])
+        print('context_nodes_embed')
+        #print(model.context_nodes_embed.data.dtype)
+        print(model.context_nodes_embed.data[0][0:12])
 
-        training_time += time.time() - t2
+
 
         if b % 100 != 0:
+
+            optimizer.zero_grad()
+            loss = model(source_node, target_node, label)
+            loss.backward()
+
+            print('nodes_embed grad')
+            print(model.nodes_embed.grad[0][0:12])
+            print('context_nodes_embed grad')
+            print(model.context_nodes_embed.grad[0][0:12])
+
+            optimizer.step()
+
+            training_time += time.time() - t2
+
             """This is for updating learning rate of optimizer: same with tensorflow one: checked"""
             for param_group in optimizer.param_groups:
                 lr = param_group['lr']
@@ -74,8 +92,12 @@ def train():
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 
+            print('LOSS: ', loss)
+
         else:
-            print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss, sampling_time, training_time,
+            with torch.no_grad():
+                loss1 = model(source_node, target_node, label)
+                print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
                                                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
