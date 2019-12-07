@@ -68,8 +68,8 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
 
 order=2
-AUC_file= 'data/auc/AUC_pytorch-3-0_fb_order=2.png'
-embed_file= 'data/embedding=pytorch(300,000batch)_fb_remained_order-2.pkl'
+AUC_file= 'data/auc/AUC_SGD_pytorch-_fb_order=2.png'
+embed_file= 'data/embedding_SGD=pytorch_fb_remained_order-2.pkl'
 G_full_file='data/facebook_combined.pkl'
 G_remained_file='data/facebook_remained.pkl'
 G_removed_file='data/facebook_removed.pkl'

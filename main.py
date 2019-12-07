@@ -31,8 +31,9 @@ def train():
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
 
-    optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     #optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     #def get_lr():
     #    for param_group in optimizer.param_groups:
@@ -48,11 +49,6 @@ def train():
         label = torch.FloatTensor(label).to(device)
         t2 = time.time()
         sampling_time += t2 - t1
-
-        print('souce_nodes, target_node, label')
-        print(source_node[:12])
-        print(target_node[:12])
-        print(label[:12])
 
         optimizer.zero_grad()
         loss = model(source_node, target_node, label)
@@ -83,7 +79,7 @@ def train():
         if b % 10000 == 0 or b == (num_batches - 1):
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             normalized_embedding = F.normalize(embedding, p=2, dim=1)
-            pickle.dump(normalized_embedding.to('cpu'), open('data/embedding=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
+            pickle.dump(normalized_embedding.to('cpu'), open('data/embedding_SGD=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
 
 
 train()
