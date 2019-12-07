@@ -18,7 +18,7 @@ Negative edges: choose the same amount of around 44000 unlinked pairs of nodes i
 (just change order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file in test_evaluate_new.py to evaluate embeddings)
 
 
-***********NOTE:************
+***********NOTE:***********
 
 TWO MODEL DEFINITELY DIFFERENT:  -> check in check-node branch
 this pytorch model is really smelly:
