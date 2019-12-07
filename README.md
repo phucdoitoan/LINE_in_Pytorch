@@ -18,7 +18,7 @@ Negative edges: choose the same amount of around 44000 unlinked pairs of nodes i
 (just change order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file in test_evaluate_new.py to evaluate embeddings)
 
 
-***********NOTE:***************
+***********NOTE:*************
 
 copy the whole thing in utils from LINE-tensorflow -> model run correctly with loss reduce to near 0 (0.00..) (for 2nd order)
 old utils (the one inside "") => even though after 66000 batches, model's loss still stuck around 0.2 0.3 (dont know why)
@@ -42,9 +42,7 @@ initalial (-1,1): lr = 10 and 0.025
 
 initial (-100, 100):
   lr = 0.25
-    first loss are different (although small) : torch 14577.215820 , tf 14577.213867
-    => Is the way to calculate loss is good?
-
+    first loss are different (although small) : torch 14577.215820 , tf 14577.213867;
     after that loss are different torch 14245. vs tf 14231; torch 15617 vs 15608
 
   lr = 10
