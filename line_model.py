@@ -3,9 +3,12 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 
 
 class Line(nn.Module):
+
+    np.random.seed(42)
 
     def __init__(self, n1, dim, order):
         super(Line, self).__init__()
@@ -13,10 +16,13 @@ class Line(nn.Module):
         self.dim = dim
         self.order = order
 
-        self.nodes_embed = nn.Parameter(torch.zeros(n1, dim).uniform_(-1, 1), requires_grad=True)
+        nodes_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+        self.nodes_embed = nn.Parameter(torch.from_numpy(nodes_init), requires_grad=True)
 
         if self.order == 2:
-            self.context_nodes_embed = nn.Parameter(torch.zeros(n1, dim).uniform_(-1, 1), requires_grad=True)
+            context_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+            self.context_nodes_embed = nn.Parameter(torch.from_numpy(context_init), requires_grad=True)
+
 
 
     def forward(self, source_node, target_node, label):
