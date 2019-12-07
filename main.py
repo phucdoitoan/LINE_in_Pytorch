@@ -31,8 +31,8 @@ def train():
     model = Line(n1=num_of_nodes, dim=embedding_dim, order=order)
     model.to(device)
 
-    #optimizer = optim.SGD(model.parameters(), lr=learning_rate)
-    optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    #optimizer = optim.RMSprop(model.parameters(), lr=learning_rate)
 
     #def get_lr():
     #    for param_group in optimizer.param_groups:
