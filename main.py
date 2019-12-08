@@ -79,7 +79,7 @@ def train():
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
-        if (b != 0) and (b % 10000 == 0 or b == (args.num_batches - 1)):
+        if (b != 0) and (b % 10000 == 0 or b == (num_batches - 1)):
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             normalized_embedding = F.normalize(embedding, p=2, dim=1)
             pickle.dump(normalized_embedding.to('cpu'), open('data/embedding_Adam=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
