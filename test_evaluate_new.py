@@ -5,6 +5,8 @@ from evaluate_new import evaluate
 import torch
 import timeit
 import matplotlib.pyplot as plt
+import random
+from tqdm import tqdm
 
 
 def numerical_integral(l_x, l_y):
@@ -29,19 +31,26 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
     t1_neg = timeit.default_timer()
     negative_set = set()
-    while len(negative_set) < len(G_removed.edges):
-        while True:
-            x = torch.randint(len(G_full.nodes), (1,)).item()
-            y = torch.randint(len(G_full.nodes), (1,)).item()
+    for i in tqdm(range(len(G_removed.edges))):
+    #while len(negative_set) < len(G_removed.edges):
+        #print(len(negative_set))
+        #while True:
+        while len(negative_set) < (i+1):
+            x = random.sample(list(G_full.nodes),1)[0]
+            y = random.sample(list(G_full.nodes),1)[0]
+            #print('negative edges (%d, %d)' %(x, y))
             if (x, y) not in G_full.edges:
                 negative_set.add((x, y))
-                break
+               #break
 
     t2_neg = timeit.default_timer()
     print('Done randomly choosing negative edges: %.2f s' %(t2_neg - t1_neg))
 
     false_edges = list(negative_set)
     true_edges = list(G_removed.edges)
+
+    print('len false edges: ', len(false_edges))
+    print('len true edges: ', len(true_edges))
 
     t1 = timeit.default_timer()
     auc_score, f1_score, auc, fpr, tpr = evaluate(embeds, true_edges, false_edges)
@@ -56,7 +65,7 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
     fig = plt.figure()
     plt.plot([0.0, 1.0], [0.0, 1.0], 'k--')
-    label = 'facebook order-%s AUC: %.4f' % (str(order), auc_score)
+    label = 'arXiv order-%s AUC: %.4f' % (str(order), auc_score)
     plt.plot(fpr, tpr, 'b-', label=label)
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
@@ -68,10 +77,10 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
 
 order=2
-AUC_file= 'data/auc/AUC_Adam-mapping-nodes_pytorch_fb_order=2-10000-batch.png'
-embed_file= 'data/embedding-mapping-nodes_Adam=torch-fb_remained_2-10000-batch.pkl'
-G_full_file='data/facebook_combined.pkl'
-G_remained_file='data/facebook_remained.pkl'
-G_removed_file='data/facebook_removed.pkl'
+AUC_file= 'data/arXiv/AUC_Adam_pytorch_arXiv_order=2-0-batch.png'
+embed_file= 'data/arXiv/embedding_Adam=torch-arXiv_remained_2-0-batch.pkl'
+G_full_file='data/arXiv/arxiv_full.pkl'
+G_remained_file='data/arXiv/arxiv_remained.pkl'
+G_removed_file='data/arXiv/arxiv_removed.pkl'
 
 main(order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file)
