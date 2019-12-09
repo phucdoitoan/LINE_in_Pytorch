@@ -19,7 +19,7 @@ def train():
     order = 2
     learning_rate = 0.025
     num_batches = 300000
-    graph_file = 'data/facebook_remained.pkl'
+    graph_file = 'data/arXiv/arxiv_remained.pkl'
 
 
     data_loader = CustomDataLoader(graph_file=graph_file)
@@ -104,7 +104,7 @@ def train():
             #print(embed_dict[0])
 
             pickle.dump(embed_dict,
-                        open('data/embedding-mapping-nodes_Adam=torch-fb_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
+                        open('data/arXiv/embedding_Adam=torch-arXiv_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
             print('done dump')
 
 
