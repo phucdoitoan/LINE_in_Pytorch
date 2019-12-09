@@ -16,11 +16,13 @@ class Line(nn.Module):
         self.dim = dim
         self.order = order
 
-        nodes_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+        nodes_init = np.random.uniform(-100, 100, (n1, dim)).astype(np.float32)
+
         self.nodes_embed = nn.Parameter(torch.from_numpy(nodes_init), requires_grad=True)
 
         if self.order == 2:
-            context_init = np.random.uniform(-1, 1, (n1, dim)).astype(np.float32)
+            context_init = np.random.uniform(-100, 100, (n1, dim)).astype(np.float32)
+
             self.context_nodes_embed = nn.Parameter(torch.from_numpy(context_init), requires_grad=True)
 
 
@@ -37,28 +39,39 @@ class Line(nn.Module):
         #label = torch.FloatTensor(label)
         #print('size source_node, target_node, label ', len(source_node), len(target_node), len(label))
 
+        #print('SOURCE NODES ', type(source_node), len(source_node), source_node)
+
+        print('nodes_embed grad ', self.nodes_embed.requires_grad)
+
         source_embed = self.nodes_embed[source_node]
-        #print('source_embed shape: ', source_embed.shape)
+        print('source_embed grad: ', source_embed.requires_grad)
+        #results: false => so no grad flow back through source_embed
 
         if self.order == 1:
             target_embed = self.nodes_embed[target_node]
-            #print('target_embed shape: ', target_embed.shape)
+            print('1st order: target_embed grad ', target_embed.requires_grad)
 
         elif self.order == 2:  # self.order == 2
+            print('context_nodes_embed grad ', self.context_nodes_embed.requires_grad)
             target_embed = self.context_nodes_embed[target_node]
-            #print('target_embed shape: ', target_embed.shape)
+            print('2nd order: target_embed grad ', target_embed.requires_grad)
         else:
             print("ERROR: order has to be 1 or 2")
 
         inner_product = torch.sum(torch.mul(source_embed, target_embed), dim=1)
+        print('inner_product grad ', inner_product.requires_grad)
         pos_neg = torch.mul(label, inner_product)
-        line_loss = F.logsigmoid(pos_neg)
+        print('pos_neg grad ', pos_neg.requires_grad)
+        logsig_loss = F.logsigmoid(pos_neg)
+        print('logsig_loss grad ', logsig_loss.requires_grad)
 
-        mean_loss = - torch.mean(line_loss)
+        mean_loss = - torch.mean(logsig_loss)
+        print('mean_loss grad ', mean_loss.grad)
 
-        #print('inner_product shape: ', inner_product.shape)
-        #print('pos_neg shape ', pos_neg.shape)
-        #print('line loss shape ', line_loss.shape)
-        #print('mean loss shape ', mean_loss.shape, mean_loss)
+        #print('   source_node ', source_node)
+        #print('   target_node ', target_node)
+        #print('   inner product: ', inner_product)
+        #print('   pos_neg: ', pos_neg)
+        #print('   logsig_loss: ', logsig_loss)
 
         return mean_loss

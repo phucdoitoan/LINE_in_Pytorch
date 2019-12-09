@@ -12,13 +12,14 @@ import torch.nn.functional as F
 
 
 def train():
+    torch.set_printoptions(precision=8)
 
     embedding_dim = 128
     batch_size = 128
     K = 5
     order = 2
     learning_rate = 0.025
-    num_batches = 300000
+    num_batches = 5  #300000
     graph_file = 'data/facebook_remained.pkl'
 
 
@@ -50,12 +51,17 @@ def train():
         t2 = time.time()
         sampling_time += t2 - t1
 
+        print('***********BATCH %d**************' % b)
+
         if b % 100 != 0:
 
             optimizer.zero_grad()
             loss = model(source_node, target_node, label)
             loss.backward()
             optimizer.step()
+
+            print('nodes_embed GRAD VAL ', model.nodes_embed.grad)
+            print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad)
 
             training_time += time.time() - t2
 
@@ -70,6 +76,10 @@ def train():
 
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
+
+            with torch.no_grad():
+                loss = model(source_node, target_node, label)
+            #print('   LOSS: %f' %loss)
 
         else:
             with torch.no_grad():
