@@ -18,7 +18,7 @@ def train():
     K = 5
     order = 2
     learning_rate = 0.025
-    num_batches = 300000
+    num_batches = 5 #300000
     graph_file = 'data/facebook_remained.pkl'
 
 
