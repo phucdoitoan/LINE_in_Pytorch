@@ -18,7 +18,7 @@ def train():
     K = 5
     order = 2
     learning_rate = 0.025
-    num_batches = 10 #300000
+    num_batches = 300000
     graph_file = 'data/facebook_remained.pkl'
 
 
@@ -62,8 +62,8 @@ def train():
 
             training_time += time.time() - t2
 
-            print('nodes_embed GRAD VAL ', model.nodes_embed.grad == 0)
-            print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad == 0)
+            #print('nodes_embed GRAD VAL ', model.nodes_embed.grad == 0)
+            #print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad == 0)
 
             """This is for updating learning rate of optimizer: same with tensorflow one: checked"""
             for param_group in optimizer.param_groups:
@@ -77,6 +77,7 @@ def train():
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 
+
         else:
             with torch.no_grad():
                 loss1 = model(source_node, target_node, label)
@@ -85,10 +86,17 @@ def train():
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
-        if (b != 0) and (b % 10000 == 0 or b == (num_batches - 1)):
+        if (b % 10000 == 0 or b == (num_batches - 1)):
+            print('Hey there')
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             normalized_embedding = F.normalize(embedding, p=2, dim=1)
-            pickle.dump(normalized_embedding.to('cpu'), open('data/embedding_Adam=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
+            normalized_embedding = normalized_embedding.to('cpu')
+            print('nomalized')
+            embed_dict = data_loader.embedding_mapping(normalized_embedding)
+            print('embed_dict')
+            #print(embed_dict)
+            pickle.dump(embed_dict, open('data/embedding-node-mapping_Adam=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
+            print('done dump')
 
 
 train()

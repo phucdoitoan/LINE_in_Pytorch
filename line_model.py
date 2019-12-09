@@ -37,31 +37,31 @@ class Line(nn.Module):
         #label = torch.FloatTensor(label)
         #print('size source_node, target_node, label ', len(source_node), len(target_node), len(label))
 
-        print('nodes_embed grad ', self.nodes_embed.requires_grad)
+        #print('nodes_embed grad ', self.nodes_embed.requires_grad)
 
         source_embed = self.nodes_embed[source_node]
-        print('source_embed grad: ', source_embed.requires_grad)
+        #print('source_embed grad: ', source_embed.requires_grad)
 
         if self.order == 1:
             target_embed = self.nodes_embed[target_node]
-            print('1st order: target_embed grad ', target_embed.requires_grad)
+        #    print('1st order: target_embed grad ', target_embed.requires_grad)
 
         elif self.order == 2:  # self.order == 2
-            print('context_nodes_embed grad ', self.context_nodes_embed.requires_grad)
+        #    print('context_nodes_embed grad ', self.context_nodes_embed.requires_grad)
             target_embed = self.context_nodes_embed[target_node]
-            print('2nd order: target_embed grad ', target_embed.requires_grad)
+        #    print('2nd order: target_embed grad ', target_embed.requires_grad)
         else:
             print("ERROR: order has to be 1 or 2")
 
         inner_product = torch.sum(torch.mul(source_embed, target_embed), dim=1)
-        print('inner_product grad ', inner_product.requires_grad)
+        #print('inner_product grad ', inner_product.requires_grad)
         pos_neg = torch.mul(label, inner_product)
-        print('pos_neg grad ', pos_neg.requires_grad)
+        #print('pos_neg grad ', pos_neg.requires_grad)
         line_loss = F.logsigmoid(pos_neg)
-        print('line_loss grad ', line_loss.requires_grad)
+        #print('line_loss grad ', line_loss.requires_grad)
 
         mean_loss = - torch.mean(line_loss)
-        print('mean_loss grad ', mean_loss.requires_grad)
+        #print('mean_loss grad ', mean_loss.requires_grad)
 
         #print('inner_product shape: ', inner_product.shape)
         #print('pos_neg shape ', pos_neg.shape)
