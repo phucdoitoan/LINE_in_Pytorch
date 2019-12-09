@@ -20,3 +20,4 @@ pytorch: 2nd-order: after 200,000 batches 1.7 -> 1.5 and AUC also 0.5
 Adam:
 tensorflow: loss do not go to -0.00  AUC of 0.811 (177,000 batch)
 pytorch: loss go to -0.00 AUC of 0.511 (200,000 batch)
+

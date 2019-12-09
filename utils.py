@@ -101,3 +101,4 @@ class AliasSampling:
             return res[0]
         else:
             return res
+

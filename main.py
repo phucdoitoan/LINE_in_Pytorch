@@ -44,6 +44,9 @@ def train():
     print('batches\tloss\tsampling time\ttraining_time\tdatetime')
 
     for b in range(num_batches):
+
+        print('******************* Batch %d *************************' %b)
+
         t1 = time.time()
         source_node, target_node, label = data_loader.fetch_batch(batch_size=batch_size, K=K)
         label = torch.FloatTensor(label).to(device)
