@@ -55,6 +55,7 @@ class Line(nn.Module):
         line_loss = F.logsigmoid(pos_neg)
 
         mean_loss = - torch.mean(line_loss)
+        print('mean_loss grad ', mean_loss.requires_grad)
 
         #print('inner_product shape: ', inner_product.shape)
         #print('pos_neg shape ', pos_neg.shape)
