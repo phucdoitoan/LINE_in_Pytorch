@@ -45,7 +45,7 @@ def train():
 
     for b in range(num_batches):
 
-        print('******************* Batch %d *************************' %b)
+        #print('******************* Batch %d *************************' %b)
 
         t1 = time.time()
         source_node, target_node, label = data_loader.fetch_batch(batch_size=batch_size, K=K)
@@ -87,15 +87,24 @@ def train():
             sampling_time, training_time = 0, 0
 
         if (b % 10000 == 0 or b == (num_batches - 1)):
+            print('batch %d' %b)
             print('Hey there')
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
             normalized_embedding = F.normalize(embedding, p=2, dim=1)
             normalized_embedding = normalized_embedding.to('cpu')
-            print('nomalized')
-            embed_dict = data_loader.embedding_mapping(normalized_embedding)
-            print('embed_dict')
-            #print(embed_dict)
-            pickle.dump(embed_dict, open('data/embedding-node-mapping_Adam=pytorch_fb_remained_order-%s.pkl' % order, 'wb'))
+            #print(normalized_embedding.shape)
+
+            #print(normalized_embedding)
+            #print('nomalized')
+            embed_dict = data_loader.embedding_mapping(normalized_embedding.numpy())
+            #print('embed_dict')
+            #print(type(embed_dict))
+            #print(len(embed_dict))
+            #print(len(embed_dict[0]))
+            #print(embed_dict[0])
+
+            pickle.dump(embed_dict,
+                        open('data/embedding-mapping-nodes_Adam=torch-fb_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
             print('done dump')
 
 
