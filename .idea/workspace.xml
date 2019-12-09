@@ -4,7 +4,6 @@
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/embedding_Adam=pytorch_fb_remained_order-2.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/embedding_Adam=pytorch_fb_remained_order-2.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/line_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/line_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,10 +70,10 @@
     </state>
     <state x="311" y="287" key="FileChooserDialogImpl/0.27.1920.996@0.27.1920.996" timestamp="1575432778220" />
     <state x="311" y="1050" width="424" height="484" key="FileChooserDialogImpl/0.768.1920.1080/560.0.1360.768@0.768.1920.1080" timestamp="1575543166336" />
-    <state x="1091" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1575864325898">
+    <state x="1091" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1575867343279">
       <screen x="0" y="27" width="1920" height="996" />
     </state>
-    <state x="1091" y="352" key="com.intellij.ide.util.TipDialog/0.27.1920.996@0.27.1920.996" timestamp="1575864325898" />
+    <state x="1091" y="352" key="com.intellij.ide.util.TipDialog/0.27.1920.996@0.27.1920.996" timestamp="1575867343279" />
     <state x="1091" y="1120" key="com.intellij.ide.util.TipDialog/0.768.1920.1080/560.0.1360.768@0.768.1920.1080" timestamp="1575526928715" />
     <state x="1103" y="1011" width="672" height="678" key="search.everywhere.popup" timestamp="1575526025607">
       <screen x="0" y="768" width="1920" height="1080" />

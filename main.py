@@ -5,7 +5,6 @@ import numpy as np
 from line_model import Line
 from utils import CustomDataLoader
 import pickle
-#import argparse
 import time
 import torch.optim as optim
 import torch.nn.functional as F
@@ -60,8 +59,8 @@ def train():
             loss.backward()
             optimizer.step()
 
-            print('nodes_embed GRAD VAL ', model.nodes_embed.grad)
-            print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad)
+            #print('nodes_embed GRAD VAL ', model.nodes_embed.grad)
+            #print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad)
 
             training_time += time.time() - t2
 
@@ -77,15 +76,15 @@ def train():
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 
-            with torch.no_grad():
-                loss = model(source_node, target_node, label)
+            #with torch.no_grad():
+            #    loss = model(source_node, target_node, label)
             #print('   LOSS: %f' %loss)
 
         else:
-            with torch.no_grad():
-                loss1 = model(source_node, target_node, label)
-                print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
-                                                time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+            #with torch.no_grad():
+            #    loss1 = model(source_node, target_node, label)
+            #    print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
+            #                                    time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
