@@ -81,10 +81,10 @@ def train():
             #print('   LOSS: %f' %loss)
 
         else:
-            #with torch.no_grad():
-            #    loss1 = model(source_node, target_node, label)
-            #    print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
-            #                                    time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+            with torch.no_grad():
+                loss1 = model(source_node, target_node, label)
+                print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
+                                                time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
