@@ -16,7 +16,7 @@ def train():
     embedding_dim = 128
     batch_size = 128
     K = 5
-    order = 2
+    order = 1
     learning_rate = 0.025
     num_batches = 300000
     graph_file = 'data/arXiv/arxiv_remained.pkl'
