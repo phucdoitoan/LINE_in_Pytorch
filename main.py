@@ -18,7 +18,7 @@ def train():
     K = 5
     order = 2
     learning_rate = 0.025
-    num_batches = 5 #300000
+    num_batches = 10 #300000
     graph_file = 'data/facebook_remained.pkl'
 
 
@@ -61,6 +61,9 @@ def train():
             optimizer.step()
 
             training_time += time.time() - t2
+
+            print('nodes_embed GRAD VAL ', model.nodes_embed.grad == 0)
+            print('context_nodes_embed GRAD VAL ', model.context_nodes_embed.grad == 0)
 
             """This is for updating learning rate of optimizer: same with tensorflow one: checked"""
             for param_group in optimizer.param_groups:
