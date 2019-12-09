@@ -37,5 +37,8 @@ def evaluate(embs, true_edges, false_edges):
     ps, rs, _ = precision_recall_curve(y_true, y_scores)
     fpr, tpr, _ = roc_curve(y_true, y_scores)
 
+    print('Threshold: ', threshold)
+    print('len y_scores: ', len(y_scores))
+
     return roc_auc_score(y_true, y_scores), f1_score(y_true, y_pred), auc(rs, ps), fpr, tpr
 

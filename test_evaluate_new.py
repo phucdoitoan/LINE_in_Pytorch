@@ -46,6 +46,12 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
     t2_neg = timeit.default_timer()
     print('Done randomly choosing negative edges: %.2f s' %(t2_neg - t1_neg))
 
+    positive_set = set(G_removed.edges)
+    intersec = positive_set.intersection(negative_set)
+    uni = positive_set.union(negative_set)
+    print('len postive and negative intersec ', len(intersec))
+    print('len pos and neg union ', len(uni))
+
     false_edges = list(negative_set)
     true_edges = list(G_removed.edges)
 
@@ -76,9 +82,9 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
     return auc_score, f1_score, auc
 
 
-order=2
-AUC_file= 'data/arXiv/AUC_Adam_pytorch_arXiv_order=2-0-batch.png'
-embed_file= 'data/arXiv/embedding_Adam=torch-arXiv_remained_2-0-batch.pkl'
+order=1
+AUC_file= 'data/arXiv/AUC_Adam_pytorch_arXiv_order=1-250000-batch.png'
+embed_file= 'data/arXiv/embedding_Adam=torch-arXiv_remained_1-250000-batch.pkl'
 G_full_file='data/arXiv/arxiv_full.pkl'
 G_remained_file='data/arXiv/arxiv_remained.pkl'
 G_removed_file='data/arXiv/arxiv_removed.pkl'

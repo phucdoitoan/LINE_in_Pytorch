@@ -18,7 +18,7 @@ def train():
     K = 5
     order = 1
     learning_rate = 0.025
-    num_batches = 300000
+    num_batches = 500000
     graph_file = 'data/arXiv/arxiv_remained.pkl'
 
 

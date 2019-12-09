@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-10000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-100000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-150000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-200000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-250000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-299999-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-50000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-10000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-20000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-30000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-50000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-80000-batch.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate_new.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_evaluate_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -58,6 +73,9 @@
       <updated>1575177424215</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1150" y="329" width="569" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575536608333">
