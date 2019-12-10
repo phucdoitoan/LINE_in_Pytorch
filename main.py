@@ -18,8 +18,8 @@ def train():
     K = 5
     order = 1
     learning_rate = 0.025
-    num_batches = 300000
-    graph_file = 'data/facebook/facebook_remained.pkl'
+    num_batches = 600000
+    graph_file = 'data/arXiv/arxiv_remained.pkl'
 
 
     data_loader = CustomDataLoader(graph_file=graph_file)
@@ -86,7 +86,7 @@ def train():
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
-        if (b % 10000 == 0 or b == (num_batches - 1)):
+        if (b % 30000 == 0 or b == (num_batches - 1)):
             print('batch %d' %b)
             print('Hey there')
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
@@ -104,7 +104,7 @@ def train():
             #print(embed_dict[0])
 
             pickle.dump(embed_dict,
-                        open('data/facebook/embedding_Adam=torch-facebook_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
+                        open('data/arXiv/embedding_Adam-arxiv_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
             print('done dump')
 
 

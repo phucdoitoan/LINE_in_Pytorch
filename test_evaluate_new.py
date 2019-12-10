@@ -83,10 +83,18 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
 
 order=1
+AUC_file= 'data/arXiv/AUC_arxiv_Adam_order=1-290000-batch-1.png'
+embed_file= 'data/arXiv/embedding_Adam=torch-arXiv_remained_1-290000-batch.pkl'
+G_full_file='data/arXiv/arxiv_full.pkl'
+G_remained_file='data/arXiv/arxiv_remained.pkl'
+G_removed_file='data/arXiv/arxiv_removed.pkl'
+
+
+main(order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file)
+
+order=1
 AUC_file= 'data/facebook/AUC_Adam_pytorch_facebook_order=1-0-batch.png'
 embed_file= 'data/facebook/embedding_Adam=torch-facebook_remained_1-0-batch.pkl'
 G_full_file='data/facebook/facebook_combined.pkl'
 G_remained_file='data/facebook/facebook_remained.pkl'
 G_removed_file='data/facebook/facebook_removed.pkl'
-
-main(order, AUC_file, embed_file, G_full_file, G_remained_file, G_removed_file)
