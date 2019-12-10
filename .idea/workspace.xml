@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_combined.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_remained.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_removed.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-10000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-100000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-150000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-200000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-250000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-299999-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/AUC_Adam_pytorch_facebook_order=1-50000-batch.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/facebook_combined.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/facebook_remained.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/facebook_removed.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_evaluate_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Experiment-new" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="ServiceViewManager">
@@ -74,11 +75,12 @@
       <screen x="560" y="0" width="1360" height="768" />
     </state>
     <state x="1150" y="329" width="569" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.768.1920.1080/560.0.1360.768@560.0.1360.768" timestamp="1575536608333" />
-    <state x="311" y="1050" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575543166336">
-      <screen x="0" y="768" width="1920" height="1080" />
+    <state x="622" y="564" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575945475051">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="311" y="287" key="FileChooserDialogImpl/0.27.1920.996@0.27.1920.996" timestamp="1575432778220" />
     <state x="311" y="1050" width="424" height="484" key="FileChooserDialogImpl/0.768.1920.1080/560.0.1360.768@0.768.1920.1080" timestamp="1575543166336" />
+    <state x="622" y="564" key="FileChooserDialogImpl/1025.2160.1920.1080/0.0.3840.2160@0.0.3840.2160" timestamp="1575945475051" />
     <state x="2182" y="704" key="com.intellij.ide.util.TipDialog" timestamp="1575944828771">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
