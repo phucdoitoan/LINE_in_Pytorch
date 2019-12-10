@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-10000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-100000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-150000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-200000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-250000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-299999-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=1-50000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-10000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-20000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-30000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-50000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_Adam_pytorch_arXiv_order=2-80000-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_combined.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_remained.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/facebook/facebook_removed.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/facebook_combined.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/facebook_remained.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/facebook_removed.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_evaluate_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +79,12 @@
     </state>
     <state x="311" y="287" key="FileChooserDialogImpl/0.27.1920.996@0.27.1920.996" timestamp="1575432778220" />
     <state x="311" y="1050" width="424" height="484" key="FileChooserDialogImpl/0.768.1920.1080/560.0.1360.768@0.768.1920.1080" timestamp="1575543166336" />
-    <state x="1091" y="1120" key="com.intellij.ide.util.TipDialog" timestamp="1575526928715">
-      <screen x="0" y="768" width="1920" height="1080" />
+    <state x="2182" y="704" key="com.intellij.ide.util.TipDialog" timestamp="1575944828771">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="1091" y="352" key="com.intellij.ide.util.TipDialog/0.27.1920.996@0.27.1920.996" timestamp="1575442638773" />
     <state x="1091" y="1120" key="com.intellij.ide.util.TipDialog/0.768.1920.1080/560.0.1360.768@0.768.1920.1080" timestamp="1575526928715" />
+    <state x="2182" y="704" key="com.intellij.ide.util.TipDialog/1025.2160.1920.1080/0.0.3840.2160@0.0.3840.2160" timestamp="1575944828771" />
     <state x="2206" y="716" width="1344" height="1999" key="search.everywhere.popup" timestamp="1575897755098">
       <screen x="0" y="0" width="3840" height="3183" />
     </state>
