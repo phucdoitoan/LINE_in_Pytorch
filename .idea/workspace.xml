@@ -2,92 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba03ec4c-33e8-404f-9df7-a626baaa8c29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-290000-batch-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-299999-batch-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-300000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-350000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-490000-batch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/arXiv/AUC_arxiv_Adam_order=1-499999-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/check.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-0-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-10000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-100000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-110000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-120000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-130000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-140000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-150000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-160000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-170000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-180000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-190000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-20000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-200000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-210000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-220000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-230000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-240000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-250000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-260000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-270000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-280000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-290000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-30000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-300000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-310000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-320000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-330000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-340000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-350000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-360000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-370000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-380000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-390000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-40000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-400000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-410000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-420000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-430000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-440000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-450000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-460000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-470000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-480000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-490000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-50000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-60000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-70000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-80000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/arXiv/embedding_Adam=torch-arXiv_remained_1-90000-batch.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_Adam-mapping-nodes_pytorch_fb_order=2-10000-batch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_Adam_pytorch-1_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_Adam_pytorch-_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_Adam_tensorflow-_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_SGD_pytorch-_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_SGD_tensorflow-_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_fb-LINE-tensorflow_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_fb-LINE-tensorflow_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-2-1_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-2-1_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-2-2_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-2-2_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-3-0_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch-3-0_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_pytorch_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-2-0_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-2-0_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-2-1_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-2-1_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-2-2_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-3-0_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow-3-0_fb_order=2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow_fb_order=1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/auc/AUC_tensorflow_fb_order=2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_evaluate_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_evaluate_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

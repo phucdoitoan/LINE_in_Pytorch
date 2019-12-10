@@ -43,6 +43,8 @@ def train():
 
     print('batches\tloss\tsampling time\ttraining_time\tdatetime')
 
+    loss_list = []
+
     for b in range(num_batches):
 
         #print('******************* Batch %d *************************' %b)
@@ -80,13 +82,14 @@ def train():
 
         else:
             with torch.no_grad():
-                loss1 = model(source_node, target_node, label)
-                print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss1, sampling_time, training_time,
+                loss = model(source_node, target_node, label)
+                print('%d\t%f\t%0.2f\t%0.2f\t%s' % (b, loss, sampling_time, training_time,
                                                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
             #print('optimizer lr: ', get_lr())
             sampling_time, training_time = 0, 0
 
         if (b % 30000 == 0 or b == (num_batches - 1)):
+            loss_list.append((b, loss))
             print('batch %d' %b)
             print('Hey there')
             embedding = model.nodes_embed.data  # embedding.requires_grad : False
@@ -106,6 +109,9 @@ def train():
             pickle.dump(embed_dict,
                         open('data/arXiv/embedding_Adam-arxiv_remained_%s-%d-batch.pkl' % (order, b), 'wb'))
             print('done dump')
+
+    with open('data/arXiv/loss_list.pkl', 'wb') as file:
+        pickle.dump(loss_list, file)
 
 
 train()
