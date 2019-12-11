@@ -83,8 +83,8 @@ def main(order=1, AUC_file='data/auc/AUC_tensorflow_fb_order=1.png', embed_file=
 
 
 order=1
-AUC_file= 'data/arXiv/AUC_arxiv_Adam_order=1-290000-batch-1.png'
-embed_file= 'data/arXiv/embedding_Adam=torch-arXiv_remained_1-290000-batch.pkl'
+AUC_file= 'data/arXiv/AUC_arxiv_Adam_order=1-510000-batch-1.png'
+embed_file= 'data/arXiv/embedding_Adam-arxiv_remained_1-510000-batch.pkl'
 G_full_file='data/arXiv/arxiv_full.pkl'
 G_remained_file='data/arXiv/arxiv_remained.pkl'
 G_removed_file='data/arXiv/arxiv_removed.pkl'

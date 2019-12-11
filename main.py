@@ -111,7 +111,7 @@ def train():
             print('done dump')
 
     with open('data/arXiv/loss_list.pkl', 'wb') as file:
-        pickle.dump(loss_list, file)
+        pickle.dump(loss_list.to('cpu'), file)
 
 
 train()
