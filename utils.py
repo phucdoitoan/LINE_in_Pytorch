@@ -1,3 +1,5 @@
+# Refer to the codes at: https://github.com/snowkylin/line
+
 import networkx as nx
 import numpy as np
 
